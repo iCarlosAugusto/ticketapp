@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:ticketapp/components/button.widget.dart';
 import 'package:ticketapp/components/text.widget.dart';
 import 'package:ticketapp/components/textbutton.widget.dart';
 import 'package:ticketapp/components/textfield.widget.dart';
+import 'package:ticketapp/pages/home.page.dart';
 
 class Signin extends StatelessWidget {
   const Signin({super.key});
@@ -37,7 +40,7 @@ class Signin extends StatelessWidget {
                 margin: const EdgeInsets.only(top: 16),
                 fullWidth: true,
                 onTap: (){
-          
+                  Get.to(() => const HomePage());
                 }
               ),
               Row(
