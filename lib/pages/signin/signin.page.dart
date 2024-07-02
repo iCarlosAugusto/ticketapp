@@ -24,6 +24,7 @@ class Signin extends StatelessWidget {
               TextfieldWidget(
                 margin: const EdgeInsets.only(top: 16),
                 label: "Senha",
+                isPasswordField: true,
               ),
               TextButtonWidget(
                 "Esqueci a senha",
