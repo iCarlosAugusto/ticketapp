@@ -4,17 +4,37 @@ import 'package:share_plus/share_plus.dart';
 import 'package:ticketapp/components/appbar.widget.dart';
 import 'package:ticketapp/components/list.widget.dart';
 import 'package:ticketapp/components/text.widget.dart';
+import 'package:ticketapp/pages/event_settings/event.settings.page.dart';
 import 'package:ticketapp/pages/guest_list/guest.list.page.dart';
+import 'package:ticketapp/utils/Qr.code.scanner.dart';
 
-class EventPage extends StatelessWidget {
+class EventPage extends StatefulWidget {
   const EventPage({super.key});
 
   @override
+  State<EventPage> createState() => _EventPageState();
+}
+
+class _EventPageState extends State<EventPage> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppbarWidget(title: "Festa do João"),
+      appBar: AppbarWidget(
+        title: "Festa do João",
+        actions: [
+          IconButton(
+            onPressed: (){
+              Get.to(() => const EventSettingsPage());
+            },
+            icon: const Icon(Icons.settings)
+          )
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: () async {
+          String code = await QRCodeScanner.scan();
+          print(code);
+        },
         backgroundColor: Colors.green,
         child: const Icon(Icons.qr_code),
       ),
