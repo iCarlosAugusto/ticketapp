@@ -68,9 +68,9 @@ class _EventPageState extends State<EventPage> {
                 width: Get.width,
                 margin: const EdgeInsets.only(top: 16),
                 padding: const EdgeInsets.all(16),
-                decoration: const BoxDecoration(
-                  color: Colors.blueGrey,
-                  borderRadius: BorderRadius.all(Radius.circular(12))
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(12)),
+                  border: Border.all(width: 2, color: Colors.purple)
                 ),
                 child: const Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,11 +85,12 @@ class _EventPageState extends State<EventPage> {
               itemBuilder: (index, __) => ListTile(
                 title: const TextWidget("Lista de convidados"),
                 trailing: const Icon(Icons.chevron_right_rounded),
+                leading: const Icon(Icons.people_outline),
                 onTap: () {
                   Get.to(() => const GuestListPage());
                 },
               ),
-              itemCount: 20
+              itemCount: 1
             )
           ],
         ),
