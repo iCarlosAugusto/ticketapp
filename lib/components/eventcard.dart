@@ -13,16 +13,19 @@ class EventCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.purple, width: 2),
-          color: Colors.purple[50],  
+          border: Border.all(color: Colors.black, width: 2),
           borderRadius: BorderRadius.circular(16)
         ),
         child: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TextWidget("28 de Junho"),
-            TextWidget("Festa do Carlão"),
-            TextWidget("Goiânia/GO - Setor Bueno")
+            TextWidget("28 de Junho", color: Colors.red, customWeight: FontWeight.w800),
+            TextWidget("Festa do Carlão", customWeight: FontWeight.w800, customFontsize: 22),
+            TextWidget(
+              "Goiânia/GO - Setor Bueno",
+              color: Colors.grey,
+              customFontsize: 14,
+            )
           ],
         ),
       ),
