@@ -48,7 +48,12 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ),
-        appBar: AppbarWidget(title: "TicketApp"),
+        appBar: AppbarWidget(
+          title: "TicketApp",
+          actions: [
+            IconButton(onPressed: () {}, icon: const Icon(Icons.notifications_none_rounded))
+          ]
+        ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
