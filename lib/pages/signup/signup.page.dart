@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:ticketapp/components/appbar.widget.dart';
@@ -29,6 +30,34 @@ class SignupPage extends StatelessWidget {
                 customFontsize: 22,
                 textAlign: TextAlign.center,
                 color: Colors.grey
+              ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(16)
+                    ),
+                    padding: const EdgeInsets.all(16),
+                    child: SvgPicture.asset(
+                      "assets/images/google-logo.svg",
+                      semanticsLabel: 'Google Signin'
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(16)
+                    ),
+                    padding: const EdgeInsets.all(16),
+                    child: SvgPicture.asset(
+                      "assets/images/apple-logo.svg",
+                      semanticsLabel: 'Apple Signin'
+                    ),
+                  ),
+                ],
               ),
               TextfieldWidget(
                 label: "Nome",
