@@ -47,9 +47,9 @@ class _EventPageState extends State<EventPage> {
               width: Get.width,              
               height: 100,
               padding: const EdgeInsets.all(16),
-              decoration: const BoxDecoration(
-                color: Colors.blueGrey,
-                borderRadius: BorderRadius.all(Radius.circular(12))
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.black, width: 2),
+                borderRadius: const BorderRadius.all(Radius.circular(12))
               ),
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
