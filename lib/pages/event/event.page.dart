@@ -74,8 +74,9 @@ class _EventPageState extends State<EventPage> {
                 ),
                 child: const Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    TextWidget("Compartilhe o convite do seu evento!"),
+                    TextWidget("Envie o convite do seu evento!"),
                     Icon(Icons.share)
                   ],
                 ),
