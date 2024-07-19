@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+import 'package:ticketapp/components/appbar.widget.dart';
 import 'package:ticketapp/components/button.widget.dart';
 import 'package:ticketapp/components/text.widget.dart';
 import 'package:ticketapp/components/textbutton.widget.dart';
 import 'package:ticketapp/components/textfield.widget.dart';
 import 'package:ticketapp/pages/home.page.dart';
-import 'package:ticketapp/pages/signup/signup.page.dart';
+import 'package:ticketapp/pages/signin/signin.page.dart';
 
-class Signin extends StatelessWidget {
-  const Signin({super.key});
+class SignupPage extends StatelessWidget {
+  const SignupPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppbarWidget(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -21,12 +23,17 @@ class Signin extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const TextWidget("Boas-vindas de volta!", customFontsize: 26, customWeight: FontWeight.w800, textAlign: TextAlign.center,),
+              const TextWidget("É um prazer tê-lo conosco =)", customFontsize: 26, customWeight: FontWeight.w800, textAlign: TextAlign.center,),
               const TextWidget(
-                "Estamos muito animados em te ver novamente!",
+                "Estamos animados para te conhecer",
                 customFontsize: 22,
                 textAlign: TextAlign.center,
                 color: Colors.grey
+              ),
+              TextfieldWidget(
+                label: "Nome",
+                keyboardType: TextInputType.emailAddress,
+                margin: const EdgeInsets.only(top: 16),
               ),
               TextfieldWidget(
                 label: "Email",
@@ -38,18 +45,8 @@ class Signin extends StatelessWidget {
                 label: "Senha",
                 isPasswordField: true,
               ),
-              Container(
-                width: Get.width,
-                alignment: Alignment.centerLeft,
-                child: TextButtonWidget(
-                  "Esqueci a senha",
-                  onTap: () {
-                          
-                  }
-                ),
-              ),
               ButtonWidget(
-                title: "Entrar",
+                title: "Registrar",
                 margin: const EdgeInsets.only(top: 16),
                 fullWidth: true,
                 onTap: (){
@@ -58,10 +55,10 @@ class Signin extends StatelessWidget {
               ),
               Row(
                 children: [
-                  const TextWidget("Não tem conta?"),
+                  const TextWidget("Já tem conta?"),
                   TextButtonWidget(
-                    "Criar conta",
-                    onTap: () => Get.to(() => SignupPage()),
+                    "Entrar",
+                    onTap: () => Get.to(() => Signin()),
                     color: Colors.blue[500]
                   )
                 ],
