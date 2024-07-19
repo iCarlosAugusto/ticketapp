@@ -17,23 +17,35 @@ class Signin extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Form(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const TextWidget("Boas-vindas de volta!", customFontsize: 26, customWeight: FontWeight.w800, textAlign: TextAlign.center,),
+              const TextWidget(
+                "Estamos muito animados em te ver novamente!",
+                customFontsize: 22,
+                textAlign: TextAlign.center,
+                color: Colors.grey
+              ),
               TextfieldWidget(
                 label: "Email",
                 keyboardType: TextInputType.emailAddress,
+                margin: const EdgeInsets.only(top: 16),
               ),
               TextfieldWidget(
                 margin: const EdgeInsets.only(top: 16),
                 label: "Senha",
                 isPasswordField: true,
               ),
-              TextButtonWidget(
-                "Esqueci a senha",
-                onTap: () {
-          
-                }
+              Container(
+                width: Get.width,
+                alignment: Alignment.centerLeft,
+                child: TextButtonWidget(
+                  "Esqueci a senha",
+                  onTap: () {
+                          
+                  }
+                ),
               ),
               ButtonWidget(
                 title: "Entrar",
