@@ -11,6 +11,7 @@ import 'package:ticketapp/components/textbutton.widget.dart';
 import 'package:ticketapp/pages/event/event.page.dart';
 import 'package:ticketapp/pages/eventCreate/eventCreate.page.dart';
 import 'package:ticketapp/pages/profile/profile.page.dart';
+import 'package:ticketapp/pages/signin/signin.page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -23,9 +24,9 @@ class HomePage extends StatelessWidget {
           child: SafeArea(
             child: Padding(
               padding: const EdgeInsets.all(16),
-              child: ListView(
+              child: Column(
                 // Important: Remove any padding from the ListView.
-                padding: EdgeInsets.zero,
+                //padding: EdgeInsets.zero,
                 children: [
                   ListTile(
                     title: const TextWidget("Olá, Carlos"),
@@ -41,6 +42,14 @@ class HomePage extends StatelessWidget {
                     onTap: () {
                       // Update the state of the app.
                       // ...
+                    },
+                  ),
+                  const Spacer(),
+                  ListTile(
+                    leading: const Icon(Icons.highlight_off_rounded),
+                    title: const TextWidget("Sair"),
+                    onTap: () {
+                      Get.offAll(() => const Signin());
                     },
                   ),
                 ],
