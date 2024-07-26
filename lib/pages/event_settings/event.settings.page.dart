@@ -33,7 +33,7 @@ class EventSettingsPage extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                TimePickerWidget.show(onConfirm: (DateTime time) {
+                TimePickerWidget.show(onConfirm: (String time) {
                   print(time);
                 });
               },

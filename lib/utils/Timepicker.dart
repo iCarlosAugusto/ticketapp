@@ -3,9 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ticketapp/components/textbutton.widget.dart';
+import 'package:intl/intl.dart';
 
 class TimePickerWidget {
-  static show({required Function(DateTime time) onConfirm}) async {
+
+  static show({required Function(String time) onConfirm}) async {
+    DateFormat dateFormat = DateFormat('HH:mm');
 
     if (Platform.isAndroid) {
       TimeOfDay? timeSelectedAndroid = await showTimePicker(
@@ -30,7 +33,8 @@ class TimePickerWidget {
       if(timeSelectedAndroid != null) {
         final now = DateTime.now();
         var date = DateTime(now.year, now.month, now.day, timeSelectedAndroid.hour, timeSelectedAndroid.minute);
-        onConfirm(date);
+        String formattedTime = dateFormat.format(date);
+        onConfirm(formattedTime);
       }
     } else if (Platform.isIOS) {
       DateTime timeSelectedIos = DateTime.now();
@@ -61,7 +65,8 @@ class TimePickerWidget {
                         "Confirmar",
                         color: CupertinoColors.systemBlue,
                         onTap: () {
-                          onConfirm(timeSelectedIos);
+                          String formattedTime = dateFormat.format(timeSelectedIos);
+                          onConfirm(formattedTime);
                           Get.back();
                         }, 
                       )

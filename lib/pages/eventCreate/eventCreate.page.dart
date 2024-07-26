@@ -19,52 +19,58 @@ class EventCreatePage extends StatelessWidget {
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(left: 16, right: 16, bottom: 32),
-            child: Column(
-              children: [
-                EasyDateTimeLine(
-                  initialDate: DateTime.now(),
-                  locale: "pt_Br",
-                  activeColor: Colors.blue,                 
-                  headerProps: const EasyHeaderProps(
-                    monthPickerType: MonthPickerType.switcher,
-                    showSelectedDate: true,
-                    monthStyle: TextStyle(fontFamily: 'Sora'),
-                    selectedDateStyle: TextStyle(fontFamily: 'Sora', fontWeight: FontWeight.w600)
+            child: Form(
+              key: controller.formKey,
+              child: Column(
+                children: [
+                  EasyDateTimeLine(
+                    initialDate: DateTime.now(),
+                    locale: "pt_Br",
+                    activeColor: Colors.blue,                 
+                    headerProps: const EasyHeaderProps(
+                      monthPickerType: MonthPickerType.switcher,
+                      showSelectedDate: true,
+                      monthStyle: TextStyle(fontFamily: 'Sora'),
+                      selectedDateStyle: TextStyle(fontFamily: 'Sora', fontWeight: FontWeight.w600)
+                    ),
                   ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    TimePickerWidget.show(onConfirm: (DateTime time) {
-                      print(time);
-                    });
-                  },
-                  child: TextfieldWidget(
-                    label: "Horário de início e fim",
-                    margin: const EdgeInsets.only(bottom: 16, top: 16),
-                    suffixIcon: const Icon(Icons.chevron_right_rounded),
-                    enabled: false,
+                  GestureDetector(
+                    onTap: () {
+                      TimePickerWidget.show(onConfirm: (String time) {
+                        controller.onSelectDate(time);
+                      });
+                    },
+                    child: TextfieldWidget(
+                      label: "Horário de início e fim",
+                      margin: const EdgeInsets.only(bottom: 16, top: 16),
+                      suffixIcon: const Icon(Icons.chevron_right_rounded),
+                      enabled: false,
+                      controller: controller.dateController,
+                    ),
                   ),
-                ),
-                  
-                TextfieldWidget(
-                  label: "Nome do evento",
-                  margin: const EdgeInsets.only(bottom: 16),
-                  controller: controller.nameController,
-                ),
-                TextfieldWidget(
-                  label: "Descrição",
-                  margin: const EdgeInsets.only(bottom: 16),
-                  controller: controller.descriptionController,
-                ),
-                ButtonWidget(
-                  title: "Confirmar",
-                  margin: const EdgeInsets.only(bottom: 16),
-                  fullWidth: true,
-                  onTap: () {
-                    controller.createEvent();
-                  }
-                )
-              ],
+                    
+                  TextfieldWidget(
+                    label: "Nome do evento",
+                    margin: const EdgeInsets.only(bottom: 16),
+                    controller: controller.nameController,
+                    notEmpty: true,
+                  ),
+                  TextfieldWidget(
+                    label: "Descrição",
+                    margin: const EdgeInsets.only(bottom: 16),
+                    controller: controller.descriptionController,
+                    notEmpty: true,
+                  ),
+                  ButtonWidget(
+                    title: "Confirmar",
+                    margin: const EdgeInsets.only(bottom: 16),
+                    fullWidth: true,
+                    onTap: () {
+                      controller.validateForm();
+                    }
+                  )
+                ],
+              ),
             ),
           ),
         ),

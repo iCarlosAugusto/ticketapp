@@ -25,6 +25,7 @@ class TextfieldWidget extends StatefulWidget {
       this.onTapOutside,
       this.onChanged,
       this.notEmpty,
+      this.readOnly = false,
     });
 
   final String? label;
@@ -48,6 +49,7 @@ class TextfieldWidget extends StatefulWidget {
   bool autofocus = false;
   bool enabled = true;
   bool? notEmpty;
+  bool readOnly = false;
 
   @override
   State<TextfieldWidget> createState() => _TextfieldWidgetState();
@@ -80,6 +82,7 @@ class _TextfieldWidgetState extends State<TextfieldWidget> {
         minLines: widget.minLines,
         maxLines: widget.maxLines ?? 1,
         maxLength: widget.maxLength,
+        readOnly: widget.readOnly,
         obscureText: widget.isPasswordField ? isObscureText : false,
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.all(8),
