@@ -38,15 +38,19 @@ class Signin extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey.withOpacity(0.2),
-                        borderRadius: BorderRadius.circular(16)
-                      ),
-                      padding: const EdgeInsets.all(16),
-                      child: SvgPicture.asset(
-                        "assets/images/google-logo.svg",
-                        semanticsLabel: 'Google Signin'
+                    GestureDetector(
+                      onTap: () => controller.signInWithGoogle(),
+                      //          // "package_name": "io.github.icarlosaugusto"
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(16)
+                        ),
+                        padding: const EdgeInsets.all(16),
+                        child: SvgPicture.asset(
+                          "assets/images/google-logo.svg",
+                          semanticsLabel: 'Google Signin'
+                        ),
                       ),
                     ),
                     Container(

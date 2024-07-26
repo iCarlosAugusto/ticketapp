@@ -104,7 +104,7 @@ class HomePage extends StatelessWidget {
               ),
       
               SizedBox(
-                height: 300,
+                height: 150,
                 child: ListWidget(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (index, _) => EventCard(
