@@ -120,13 +120,22 @@ class HomePage extends StatelessWidget {
                       );
                     }
                     List<Event>? list = snapshot.data?.docs.map((doc) => Event.fromJson(doc.data() as Map<String, dynamic>)).toList();
-                    return ListWidget(
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (index, _) => EventCard(
-                        onTap: () => Get.to(() => const EventPage(), transition: Transition.cupertino)
+                    return SizedBox(
+                      height: 130,
+                      child: ListWidget(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (_, index) {
+                          Event currentEvent = list![index];
+                          return EventCard(
+                            name: currentEvent.name,
+                            description: currentEvent.description,
+                            date: "29 de Jun",
+                            onTap: () => Get.to(() => const EventPage(), transition: Transition.cupertino)
+                          );
+                        },
+                        separatorBuilder: (_, __) => const SizedBox(width: 16),
+                        itemCount: list?.length ?? 0
                       ),
-                      separatorBuilder: (_, __) => const SizedBox(width: 16),
-                      itemCount: list?.length ?? 0
                     );
                   }  
                 ),

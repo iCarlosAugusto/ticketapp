@@ -3,9 +3,20 @@ import 'package:ticketapp/components/text.widget.dart';
 
 class EventCard extends StatelessWidget {
 
-  EventCard({super.key, required this.onTap});
 
+  EventCard({
+    super.key,
+    required this.name,
+    required this.description,
+    required this.date,
+    required this.onTap
+  });
+
+  String name;
+  String? description;
+  String date;
   void Function() onTap;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
