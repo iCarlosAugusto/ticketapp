@@ -129,8 +129,9 @@ class HomePage extends StatelessWidget {
                           return EventCard(
                             name: currentEvent.name,
                             description: currentEvent.description,
+                            location: "Setor bueno",
                             date: "29 de Jun",
-                            onTap: () => Get.to(() => const EventPage(), transition: Transition.cupertino)
+                            onTap: () => Get.to(() => EventPage(event: currentEvent), transition: Transition.cupertino)
                           );
                         },
                         separatorBuilder: (_, __) => const SizedBox(width: 16),

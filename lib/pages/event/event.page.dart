@@ -4,23 +4,20 @@ import 'package:share_plus/share_plus.dart';
 import 'package:ticketapp/components/appbar.widget.dart';
 import 'package:ticketapp/components/list.widget.dart';
 import 'package:ticketapp/components/text.widget.dart';
+import 'package:ticketapp/models/event.model.dart';
 import 'package:ticketapp/pages/event_settings/event.settings.page.dart';
 import 'package:ticketapp/pages/guest_list/guest.list.page.dart';
 import 'package:ticketapp/utils/Qr.code.scanner.dart';
 
-class EventPage extends StatefulWidget {
-  const EventPage({super.key});
+class EventPage extends StatelessWidget {
+  final Event event;
+  const EventPage({super.key, required this.event});
 
-  @override
-  State<EventPage> createState() => _EventPageState();
-}
-
-class _EventPageState extends State<EventPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppbarWidget(
-        title: "Festa do João",
+        title: event.name,
         actions: [
           IconButton(
             onPressed: (){
