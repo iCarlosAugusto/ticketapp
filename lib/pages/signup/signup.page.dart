@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:ticketapp/components/appbar.widget.dart';
 import 'package:ticketapp/components/button.widget.dart';
 import 'package:ticketapp/components/text.widget.dart';
 import 'package:ticketapp/components/textbutton.widget.dart';
 import 'package:ticketapp/components/textfield.widget.dart';
-import 'package:ticketapp/pages/home.page.dart';
+import 'package:ticketapp/pages/home/home.page.dart';
 import 'package:ticketapp/pages/signin/signin.page.dart';
 
 class SignupPage extends StatelessWidget {

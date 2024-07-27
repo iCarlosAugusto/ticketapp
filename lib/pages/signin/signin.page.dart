@@ -7,7 +7,7 @@ import 'package:ticketapp/components/button.widget.dart';
 import 'package:ticketapp/components/text.widget.dart';
 import 'package:ticketapp/components/textbutton.widget.dart';
 import 'package:ticketapp/components/textfield.widget.dart';
-import 'package:ticketapp/pages/home.page.dart';
+import 'package:ticketapp/pages/home/home.page.dart';
 import 'package:ticketapp/pages/signin/signin.controller.dart';
 import 'package:ticketapp/pages/signup/signup.page.dart';
 

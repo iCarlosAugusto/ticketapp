@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:ticketapp/components/loadingfullscreen.widget.dart';
-import 'package:ticketapp/pages/home.page.dart';
+import 'package:ticketapp/pages/home/home.page.dart';
 
 class SigninController extends GetxController {
 

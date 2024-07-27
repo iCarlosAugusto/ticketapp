@@ -7,7 +7,7 @@ class CreateEventModel {
 
   Map<String, dynamic> toJson() {
     return {
-      'nome': name,
+      'name': name,
       'description': description,
     };
   }
